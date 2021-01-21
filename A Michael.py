@@ -36,14 +36,14 @@ def check_emptybox(position):
     return True 
 
 def is_winning(symbol):
-    if (values[1] == symbol and values[2] == symbol and values[3] == symbol) or \
-        (values[4] == symbol and values[5] == symbol and values[6] == symbol) or \
-        (values[7] == symbol and values[8] == symbol and values[9] == symbol) or \
+    if (values[0] == symbol and values[1] == symbol and values[2] == symbol) or \
+        (values[3] == symbol and values[4] == symbol and values[5] == symbol) or \
+        (values[6] == symbol and values[7] == symbol and values[8] == symbol) or \
+        (values[0] == symbol and values[3] == symbol and values[6] == symbol) or \
         (values[1] == symbol and values[4] == symbol and values[7] == symbol) or \
         (values[2] == symbol and values[5] == symbol and values[8] == symbol) or \
-        (values[3] == symbol and values[6] == symbol and values[9] == symbol) or \
-        (values[1] == symbol and values[5] == symbol and values[9] == symbol) or \
-        (values[3] == symbol and values[5] == symbol and values[7] == symbol):
+        (values[0] == symbol and values[4] == symbol and values[8] == symbol) or \
+        (values[2] == symbol and values[4] == symbol and values[6] == symbol):
       return True
     else:
       return False
@@ -73,6 +73,7 @@ while True:
   values[computer-1] = "X"
   print_tic_tac_toe(values)
   print(f"Computer position was: {computer}")
+  print(values)
   
   if is_winning("X"):
       _=os.system("cls")
@@ -88,13 +89,14 @@ while True:
   
   #Human starts playing with 'O' -------------------
   while True:
-    human = input("Please choose your box from 1-9  ")
-    human = int(human)  
+    human = int(input("Please choose your box from 1-9  "))
+    # human = int(human)  
     if check_emptybox(human) == True:  # must be true, so position is free
       break                                 # end while loop of X chosing position
   values[human-1] = "O"
   print_tic_tac_toe(values)
   print(f"Human position was: {human}")  
+  print(values)
 
   if is_winning("O"):
     _=os.system("cls")
@@ -121,4 +123,3 @@ while True:
 
 
   
-	
