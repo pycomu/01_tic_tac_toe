@@ -62,9 +62,6 @@ game_init()
 
 while True:
 
-  # _=os.system("cls")
-  # print_tic_tac_toe(values)
-
   #Computer starts playing with 'X' -------------
   while True:
     computer = player_computer()    
