@@ -16,6 +16,32 @@ def print_tic_tac_toe(values):
     print("\n")
  
  
+def game_type():
+    print("\t--------------------------------------")
+    print("\t  What game type do you chose ?       ")
+    print("\t  1) computer vs human                ")
+    print("\t  2) human vs human                   ")
+    print("\t--------------------------------------")
+    while True:
+        try:
+            choice = int(input())   
+        except ValueError:
+            print("Wrong Input!!! Try Again\n")
+            continue
+    
+        # Conditions for player choice  
+        if choice == 1:
+            game_choice = 0
+            
+        elif choice == 2:
+            game_choice = 1
+            
+        else:
+            print("Wrong Game Choice!!!! Try Again\n")
+            continue
+
+        return game_choice
+
 # Function to print the score-board
 def print_scoreboard(score_board):
     print("\t--------------------------------")
@@ -107,9 +133,14 @@ def single_game(cur_player):
             cur_player = 'O'
         else:
             cur_player = 'X'
- 
-if __name__ == "__main__":
- 
+
+# big function on computer vs human
+def com_vs_hum():
+    pass
+
+# big function on human vs human
+def hum_vs_hum():
+
     print("Player 1")
     player1 = input("Enter the name : ")
     print("\n")
@@ -185,3 +216,16 @@ if __name__ == "__main__":
             cur_player = player2
         else:
             cur_player = player1
+ 
+if __name__ == "__main__":
+    
+    # ask for game combination a) computer vs human and B) human vs human
+    game_choice = game_type()
+
+    if game_choice == 0: # computer vs human
+        pass
+
+    if game_choice == 1: # human vs human
+        hum_vs_hum()
+
+    
